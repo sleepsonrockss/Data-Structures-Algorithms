@@ -10,6 +10,7 @@
 #include <random>
 #include <chrono>
 using namespace std;
+// hi
 /////////////SORTING ALGO TO USE//////////////////////
 void insertionSort(vector<int> &v) {
     for (int i = 1; i < v.size(); i++) {
@@ -57,7 +58,7 @@ int secondLargest_better(vector<int> &v) {
 }//SECOND PASS
 int secondLargest_optimal(vector<int> &v) {
     int largest = v[0];
-    int slargest = -1; //Array doesn't contain negative numbers or take integer minimum.
+    int slargest = -1; //array doesn't contain negative numbers or take integer minimum.
     for (int i = 1; i < v.size(); i++) {
         if (v[i] > largest) {
             slargest = largest;
