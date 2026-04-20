@@ -12,10 +12,10 @@ foundation in core Computer Science concepts and problem-solving patterns.
 ## 📁 Structure
 
 ```
-├── arrays/
-├── linked-lists/
-├── trees/
-├── graphs/
+├── array/
+├── linked-list/
+├── tree/
+├── graph/
 ├── dynamic-programming/
 └── sorting/
 ```
