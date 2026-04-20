@@ -10,7 +10,6 @@
 #include <random>
 #include <chrono>
 using namespace std;
-// test 3
 /////////////SORTING ALGO TO USE//////////////////////
 void insertionSort(vector<int> &v) {
     for (int i = 1; i < v.size(); i++) {
@@ -23,6 +22,24 @@ void insertionSort(vector<int> &v) {
     }
 }
 /////////////SORTING ALGO TO USE//////////////////////
+
+
+/////////////DOING IT BYMYSELF//////////////////////
+int largestElement_Myself1(vector<int> &v) {
+    insertionSort(v);
+    int largest = v.back();
+    return largest;
+}
+int largestElement_Myself2(vector<int> &v) {
+    int largest = v[0];
+    for (int i = 1; i < v.size(); i++) {
+        if (v[i] > largest) {
+            largest = v[i];
+        }
+    }
+    return largest;
+}
+/////////////DOING IT BYMYSELF//////////////////////
 int largestElement(vector<int> &v) {
     int largest = v[0];
     for (int i = 1; i < v.size(); i++) {
@@ -530,11 +547,9 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {0,2,1,2,1,0};
-
-    for (auto it = test.begin(); it != test.end(); it++) {
-        cout << *(it) << " ";
-    }
+    vector<int> test = {0,2,1,7,1,0};
+    cout << largestElement_Myself2(test);
+    //for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     //int test1[] = {1,0,3,4};
     // cout << secondSmallest(test);
     // for (int i = 0; i < test.size(); i++) {
