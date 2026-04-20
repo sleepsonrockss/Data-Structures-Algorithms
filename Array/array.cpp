@@ -9,6 +9,7 @@
 #include <map>
 #include <random>
 #include <chrono>
+#include <float.h>
 using namespace std;
 /////////////SORTING ALGO TO USE//////////////////////
 void insertionSort(vector<int> &v) {
@@ -66,6 +67,14 @@ int secondSmallest_Myself1(vector<int> &v) {
         }
     }
     return secondSmallest;
+}
+bool sortedArray_Myself(vector<int> &v) {
+    for (int i = 0; i < v.size() - 1; i++) {
+        if (v[i] <= v[i+1]) { //if you use v.at(i+1) then you will give you an out of bounds error
+        }
+        else return false;
+    }
+    return true;
 }
 /////////////DOING IT BYMYSELF//////////////////////
 int largestElement(vector<int> &v) {
@@ -576,8 +585,8 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {0,2,1,7,1,0,6};
-    cout << secondSmallest_Myself1(test);
+    vector<int> test = {1,2,3,4};
+    cout << sortedArray_Myself(test);
     //for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     //int test1[] = {1,0,3,4};
     // cout << secondSmallest(test);
