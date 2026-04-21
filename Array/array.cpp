@@ -91,6 +91,19 @@ void leftRotate_Myself(vector<int> &v) {
     }
     v[v.size()-1] = firstElement;
 }
+void leftRotatebyD_brute_Myself(vector<int> &v, int d) {
+    d = d % v.size();
+    vector<int> sup;
+    for (int i = 0; i < d; i++) {
+        sup.push_back(v[i]);
+    }
+    for (int j = d; j < v.size(); j++) {
+        v[j-1] = v[j];
+    }
+    for (int k = 0; k < sup.size(); k++) {
+        v.
+    }
+}
 /////////////DOING IT BYMYSELF//////////////////////
 
 
@@ -606,7 +619,7 @@ int majorityElement(vector<int> v) {
 
 int main() {
     vector<int> test = {1,2,3};
-    leftRotate_Myself(test);
+    leftRotatebyD_brute_Myself(test, 4);
     for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     //int test1[] = {1,0,3,4};
     // cout << secondSmallest(test);
