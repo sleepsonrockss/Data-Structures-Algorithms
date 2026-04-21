@@ -84,6 +84,13 @@ void removeDuplicates_Myself(vector<int> &v) {
     v.clear(); //clear the whole vector
     for (auto it = set.begin(); it != set.end(); it++){v.push_back(*it);}
 }
+void leftRotate_Myself(vector<int> &v) {
+    int firstElement = v[0];
+    for (int i = 1; i < v.size(); i++) {
+        v[i-1] = v[i];
+    }
+    v[v.size()-1] = firstElement;
+}
 /////////////DOING IT BYMYSELF//////////////////////
 
 
@@ -187,7 +194,7 @@ int removeduplicates_optimal(vector<int> &v) {
             i++;
         }
     }return i+1;
-}
+} //????????DO IT AGAIN / SEARCHHHHH
 void leftRotate(vector<int> &v) {
     int temp = v[0];
     for (int i = 1; i < v.size(); i++) {
@@ -598,8 +605,8 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {1,1,2};
-    removeDuplicates_Myself(test);
+    vector<int> test = {1,2,3};
+    leftRotate_Myself(test);
     for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     //int test1[] = {1,0,3,4};
     // cout << secondSmallest(test);
