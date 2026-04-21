@@ -76,7 +76,20 @@ bool sortedArray_Myself(vector<int> &v) {
     }
     return true;
 }
+void removeDuplicates_Myself(vector<int> &v) {
+    set<int> set;
+    for (int i = 0; i < v.size(); i++) {
+        set.insert(v[i]);
+    }
+    v.clear(); //clear the whole vector
+    for (auto it = set.begin(); it != set.end(); it++){v.push_back(*it);}
+}
 /////////////DOING IT BYMYSELF//////////////////////
+
+
+
+
+
 int largestElement(vector<int> &v) {
     int largest = v[0];
     for (int i = 1; i < v.size(); i++) {
@@ -585,9 +598,9 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {1,2,3,4};
-    cout << sortedArray_Myself(test);
-    //for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
+    vector<int> test = {1,1,2};
+    removeDuplicates_Myself(test);
+    for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     //int test1[] = {1,0,3,4};
     // cout << secondSmallest(test);
     // for (int i = 0; i < test.size(); i++) {
