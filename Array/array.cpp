@@ -98,11 +98,12 @@ void leftRotatebyD_brute_Myself(vector<int> &v, int d) {
         sup.push_back(v[i]);
     }
     for (int j = d; j < v.size(); j++) {
-        v[j-1] = v[j];
+        v[j-d] = v[j];
     }
-    for (int k = 0; k < sup.size(); k++) {
-        v.
+    for (int k = d+1; k < v.size(); k++) {
+        v[k] =
     }
+    // }
 }
 /////////////DOING IT BYMYSELF//////////////////////
 
@@ -227,12 +228,7 @@ void leftRotatebyD_brute(vector<int> &v, int d) {
     for (int k = v.size()-d; k < v.size(); k++) {
         v[k] = temp[k - (v.size()-d)];
     }
-}
-void leftRotateByD_optimal(int v[],int n, int d) {
-    reverse(v, v + d);
-    reverse(v + d, v + n);
-    reverse(v, v + n);
-}
+} //HARD LOOK AT YT
 void zeroesToTheEnd(vector<int> &v) {
     vector<int> temp;
     for (int i = 0; i < v.size(); i++) {
