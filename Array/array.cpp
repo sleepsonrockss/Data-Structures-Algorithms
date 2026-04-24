@@ -101,7 +101,7 @@ void leftRotatebyD_brute_Myself(vector<int> &v, int d) {
         v[j-d] = v[j];
     }
     for (int k = d+1; k < v.size(); k++) {
-        v[k] =
+        v[k] = sup[k - (k-d-1)]; //line changed
     }
     // }
 }
