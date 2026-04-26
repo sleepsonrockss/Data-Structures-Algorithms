@@ -105,6 +105,16 @@ void leftRotatebyD_brute_Myself(vector<int> &v, int d) {
     }
     // }
 }
+
+int largestElement_Myself(vector<int> &v) {
+    int largest = -100;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] > largest) {
+            largest = v[i];
+        }
+    }
+    return largest;
+}
 /////////////DOING IT BYMYSELF//////////////////////
 
 
@@ -614,11 +624,11 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {1,2,3};
-    leftRotatebyD_brute_Myself(test, 4);
-    for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
-    //int test1[] = {1,0,3,4};
-    // cout << secondSmallest(test);
+    vector<int> test = {1,2,3,9,7,2};
+    // leftRotatebyD_brute_Myself(test, 4);
+    // for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
+    // int test1[] = {1,0,3,4};
+    cout << largestElement_Myself(test);
     // for (int i = 0; i < test.size(); i++) {
     //     cout << test[i] ;
     // }
