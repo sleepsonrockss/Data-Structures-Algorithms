@@ -115,6 +115,33 @@ int largestElement_Myself(vector<int> &v) {
     }
     return largest;
 }
+int secondLargest_bruteforce_Myself(vector<int> &v) {
+    insertionSort(v);
+    int slargest;
+    int largest = v[v.size()-1];
+    for (int i = v.size()-2; i > 0; i--) {
+        if (v[i] != largest) {
+            slargest = v[i];
+            break;
+        }
+    }
+    return slargest;
+}
+int secondLargest_better_Myself(vector<int> &v) {
+    int largest;
+    int slargest = -1;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] > largest) {
+            largest = v[i];
+        }
+    }
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] < largest & v[i] > slargest) {
+            slargest = v[i];
+        }
+    }
+    return slargest;
+}
 /////////////DOING IT BYMYSELF//////////////////////
 
 
@@ -624,11 +651,11 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {1,2,3,9,7,2};
+    vector<int> test = {1,2,3,9,9,9,7,2};
     // leftRotatebyD_brute_Myself(test, 4);
     // for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     // int test1[] = {1,0,3,4};
-    cout << largestElement_Myself(test);
+    cout << secondLargest_better_Myself(test);
     // for (int i = 0; i < test.size(); i++) {
     //     cout << test[i] ;
     // }
