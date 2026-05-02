@@ -142,12 +142,22 @@ int secondLargest_better_Myself(vector<int> &v) {
     }
     return slargest;
 }
+int secondLargest_optimal_Myself(vector<int> &v) {
+    int largest = v[0];
+    int slargest = -1;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] > largest) {
+            slargest = largest;
+            largest = v[i];
+
+        }
+        else if (v[i] < largest && v[i] > slargest) {
+            slargest = v[i];
+        }
+    }
+    return slargest;
+}
 /////////////DOING IT BYMYSELF//////////////////////
-
-
-
-
-
 int largestElement(vector<int> &v) {
     int largest = v[0];
     for (int i = 1; i < v.size(); i++) {
@@ -655,7 +665,7 @@ int main() {
     // leftRotatebyD_brute_Myself(test, 4);
     // for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     // int test1[] = {1,0,3,4};
-    cout << secondLargest_better_Myself(test);
+    cout << secondLargest_optimal_Myself(test);
     // for (int i = 0; i < test.size(); i++) {
     //     cout << test[i] ;
     // }
