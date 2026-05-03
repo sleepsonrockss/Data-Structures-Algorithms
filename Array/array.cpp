@@ -157,6 +157,21 @@ int secondLargest_optimal_Myself(vector<int> &v) {
     }
     return slargest;
 }
+int secondSmallest_Myself(vector<int> &v) {
+    int smallest = v[0];
+    int ssmallest = INT_MAX;
+    for (int i = 1; i < v.size(); i++) {
+        if (v[i] < smallest) {
+            ssmallest = smallest;
+            smallest = v[i];
+        }
+        else if (v[i] < ssmallest && v[i] > smallest) {
+            ssmallest = v[i];
+        }
+    }
+    return ssmallest;
+}
+
 /////////////DOING IT BYMYSELF//////////////////////
 int largestElement(vector<int> &v) {
     int largest = v[0];
@@ -661,11 +676,11 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {1,2,3,9,9,9,7,2};
+    vector<int> test = {4,6,2,0,1};
     // leftRotatebyD_brute_Myself(test, 4);
     // for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     // int test1[] = {1,0,3,4};
-    cout << secondLargest_optimal_Myself(test);
+    cout << secondSmallest_Myself(test);
     // for (int i = 0; i < test.size(); i++) {
     //     cout << test[i] ;
     // }
