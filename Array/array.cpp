@@ -82,7 +82,9 @@ void removeDuplicates_Myself(vector<int> &v) {
         set.insert(v[i]);
     }
     v.clear(); //clear the whole vector
-    for (auto it = set.begin(); it != set.end(); it++){v.push_back(*it);}
+    for (auto it = set.begin(); it != set.end(); it++) {
+        v.push_back(*it);
+    }
 }
 void leftRotate_Myself(vector<int> &v) {
     int firstElement = v[0];
@@ -105,7 +107,6 @@ void leftRotatebyD_brute_Myself(vector<int> &v, int d) {
     }
     // }
 }
-
 int largestElement_Myself(vector<int> &v) {
     int largest = -100;
     for (int i = 0; i < v.size(); i++) {
@@ -171,7 +172,23 @@ int secondSmallest_Myself(vector<int> &v) {
     }
     return ssmallest;
 }
+bool sortedArray_Myself_again(vector<int> &v) {
+    for (int i = 0; i < v.size() - 1; i++) {
+        if (v[i] < v[i+1]) {
+        } return true;
+    }
+    return false;
+}
 
+void removeDuplicates_optimal_Myself(vector<int> &v) {
+    int i = 0;
+    for (int j = 1; j < v.size(); j++) {
+        if (v[j] != v[i]) {
+            v[i+1] = v[j];
+            i++;
+        }
+    }
+}
 /////////////DOING IT BYMYSELF//////////////////////
 int largestElement(vector<int> &v) {
     int largest = v[0];
@@ -676,11 +693,11 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {4,6,2,0,1};
+    vector<int> test = {1,1,2};
     // leftRotatebyD_brute_Myself(test, 4);
     // for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     // int test1[] = {1,0,3,4};
-    cout << secondSmallest_Myself(test);
+    removeDuplicates_optimal_Myself(test);
     // for (int i = 0; i < test.size(); i++) {
     //     cout << test[i] ;
     // }
