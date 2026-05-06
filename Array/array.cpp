@@ -179,7 +179,6 @@ bool sortedArray_Myself_again(vector<int> &v) {
     }
     return false;
 }
-
 void removeDuplicates_optimal_Myself(vector<int> &v) {
     int i = 0;
     for (int j = 1; j < v.size(); j++) {
