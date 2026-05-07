@@ -198,6 +198,22 @@ void zeroesToTheEnd_Brute_Myself(vector<int> &v) {
         }
     }
 }
+
+void zeroesToTheEnd_optimal_Myself(vector<int> &v) {
+    int j = -1;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == 0) {
+            j = i;
+            break;
+        }
+    }
+    for (int i = j+1; i < v.size(); i++) {
+        if (v[i] != 0) {
+            swap(v[j], v[i]); //zeroes pushed to the back
+            j++;
+        }
+    }
+}
 /////////////DOING IT BYMYSELF//////////////////////
 int largestElement(vector<int> &v) {
     int largest = v[0];
@@ -323,19 +339,19 @@ void zeroesToTheEnd(vector<int> &v) {
         if (v[i] != 0) {
             temp.push_back(v[i]);
         }
-    }
+    } //adding to the temp array
     for (int i = 0; i < v.size(); i++) {
         v[i] = temp[i];
-    }
+    } //all non zero goes to the front
     for (int i = temp.size(); i < v.size(); i++) {
         v[i] = 0;
-    }
+    }// fill the rest with zeroes
 }
-void zeroesToTheEnd_optimal(vector<int> &v) {
+void zeroesToTheEnd_optimal(vector<int> &v) { //2 pointer approach
     int j = -1;
     for (int i = 0; i < v.size(); i++) {
         if (v[i] == 0) {
-            j = i;
+            j = i; // j is where the first occurance of 0
             break;
         };
     }
@@ -706,7 +722,7 @@ int main() {
     // leftRotatebyD_brute_Myself(test, 4);
     // for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     // int test1[] = {1,0,3,4};
-    zeroesToTheEnd_Brute_Myself(test);
+    zeroesToTheEnd_optimal_Myself(test);
     // for (int i = 0; i < test.size(); i++) {
     //     cout << test[i] ;
     // }
