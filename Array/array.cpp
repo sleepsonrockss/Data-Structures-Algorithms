@@ -188,6 +188,16 @@ void removeDuplicates_optimal_Myself(vector<int> &v) {
         }
     }
 }
+void zeroesToTheEnd_Brute_Myself(vector<int> &v) {
+    int count = 0;
+    vector<int> newv(v.size(), 0);
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] != 0) {
+            newv[count] = v[i];
+            count++;
+        }
+    }
+}
 /////////////DOING IT BYMYSELF//////////////////////
 int largestElement(vector<int> &v) {
     int largest = v[0];
@@ -692,11 +702,11 @@ int majorityElement(vector<int> v) {
 
 
 int main() {
-    vector<int> test = {1,1,2};
+    vector<int> test = {0,0,0,1,2};
     // leftRotatebyD_brute_Myself(test, 4);
     // for (auto it = test.begin(); it != test.end(); it++) { cout << *(it) << " ";}
     // int test1[] = {1,0,3,4};
-    removeDuplicates_optimal_Myself(test);
+    zeroesToTheEnd_Brute_Myself(test);
     // for (int i = 0; i < test.size(); i++) {
     //     cout << test[i] ;
     // }
